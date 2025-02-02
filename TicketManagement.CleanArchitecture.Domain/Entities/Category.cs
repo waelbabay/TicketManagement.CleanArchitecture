@@ -1,5 +1,5 @@
 ﻿
-using GloboTicket.TicketManagement.Domain.Common;
+using TicketManagement.CleanArchitecture.Domain.Common;
 
 namespace TicketManagement.CleanArchitecture.Domain.Entities
 {

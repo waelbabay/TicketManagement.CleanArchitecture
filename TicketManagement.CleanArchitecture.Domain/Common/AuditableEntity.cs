@@ -1,5 +1,5 @@
 ﻿
-namespace GloboTicket.TicketManagement.Domain.Common
+namespace TicketManagement.CleanArchitecture.Domain.Common
 {
     public class AuditableEntity
     {

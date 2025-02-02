@@ -18,7 +18,7 @@ namespace TicketManagement.CleanArchitecture.Application.Features.Events.Command
 
         public async Task Handle(UpdateEventCommand request, CancellationToken cancellationToken)
         {
-            Event eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);
+            Event? eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);
 
             _mapper.Map(request, eventToUpdate, typeof(UpdateEventCommand), typeof(Event));
 

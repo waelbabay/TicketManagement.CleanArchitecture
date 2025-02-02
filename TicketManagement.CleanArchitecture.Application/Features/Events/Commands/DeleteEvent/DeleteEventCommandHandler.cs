@@ -15,7 +15,7 @@ namespace TicketManagement.CleanArchitecture.Application.Features.Events.Command
 
         public async Task Handle(DeleteEventCommand request, CancellationToken cancellationToken)
         {
-            Event eventToDelete = await _eventRepository.GetByIdAsync(request.EventId);
+            Event? eventToDelete = await _eventRepository.GetByIdAsync(request.EventId);
 
             await _eventRepository.DeleteAsync(eventToDelete);
         }

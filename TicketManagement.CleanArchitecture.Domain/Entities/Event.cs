@@ -1,9 +1,8 @@
-﻿
-using GloboTicket.TicketManagement.Domain.Common;
+﻿using TicketManagement.CleanArchitecture.Domain.Common;
 
 namespace TicketManagement.CleanArchitecture.Domain.Entities
 {
-    public class Event: AuditableEntity
+    public class Event : AuditableEntity
     {
         public Guid EventId { get; set; }
         public string Name { get; set; } = string.Empty;
