@@ -12,8 +12,8 @@ using TicketManagement.CleanArchitecture.Persistence;
 namespace TicketManagement.CleanArchitecture.Persistence.Migrations
 {
     [DbContext(typeof(TicketManagementDbContext))]
-    [Migration("20250203082658_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20250210165007_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -103,6 +103,9 @@ namespace TicketManagement.CleanArchitecture.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Language")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastModifiedBy")
