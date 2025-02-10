@@ -16,6 +16,7 @@ namespace TicketManagement.CleanArchitecture.Application.Profiles
         {
             CreateMap<Event, EventListVm>().ReverseMap();
             CreateMap<Event, EventDetailVm>().ReverseMap();
+            CreateMap<Event, CategoryEventDto>();
             CreateMap<CreateEventCommand, Event>();
             CreateMap<UpdateEventCommand, Event>();
 

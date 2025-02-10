@@ -13,6 +13,7 @@ namespace TicketManagement.CleanArchitecture.Application.Features.Events.Queries
             _eventRepository = eventRepository;
             _mapper = mapper;
         }
+
         public async Task<List<EventListVm>> Handle(GetEventsListQuery request, CancellationToken cancellationToken)
         {
             var events = (await _eventRepository.ListAllAsync()).OrderBy(e => e.Date);

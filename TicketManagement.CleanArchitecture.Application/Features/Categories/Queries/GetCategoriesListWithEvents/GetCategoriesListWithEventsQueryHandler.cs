@@ -18,6 +18,7 @@ namespace TicketManagement.CleanArchitecture.Application.Features.Categories.Que
         public async Task<List<CategoryEventListVm>> Handle(GetCategoriesListWithEventsQuery request, CancellationToken cancellationToken)
         {
             var categories = await _categoryRepository.GetCategoriesWithEvents(request.IncludeHistory);
+
             return _mapper.Map<List<CategoryEventListVm>>(categories);
         }
     }

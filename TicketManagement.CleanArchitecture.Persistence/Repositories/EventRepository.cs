@@ -12,7 +12,7 @@ namespace TicketManagement.CleanArchitecture.Persistence.Repositories
 
         public async Task<bool> IsEventNameAndDateUnique(string name, DateTime eventDate)
         {
-            return await _dbContext.Events.AnyAsync(e => e.Name == name && e.Date.Date == eventDate.Date);
+            return !await _dbContext.Events.AnyAsync(e => e.Name == name && e.Date.Date == eventDate.Date);
         }
     }
 }

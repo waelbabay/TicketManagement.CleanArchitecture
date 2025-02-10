@@ -2,7 +2,7 @@
 
 namespace TicketManagement.CleanArchitecture.Application.Exceptions
 {
-    internal class ValidationException : Exception
+    public class ValidationException : Exception
     {
         public List<string> ValidationErrors { get; set; }
 

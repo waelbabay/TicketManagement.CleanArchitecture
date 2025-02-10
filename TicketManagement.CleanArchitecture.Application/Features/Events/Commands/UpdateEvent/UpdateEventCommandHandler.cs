@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using TicketManagement.CleanArchitecture.Application.Contracts.Persistence;
+using TicketManagement.CleanArchitecture.Application.Exceptions;
 using TicketManagement.CleanArchitecture.Domain.Entities;
 
 namespace TicketManagement.CleanArchitecture.Application.Features.Events.Commands.UpdateEvent
@@ -19,6 +20,13 @@ namespace TicketManagement.CleanArchitecture.Application.Features.Events.Command
         public async Task Handle(UpdateEventCommand request, CancellationToken cancellationToken)
         {
             Event? eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);
+
+            if(eventToUpdate == null)
+            {
+                throw new NotFoundException(nameof(Event), request.EventId.ToString());
+            }
+
+            var validator = new UpdateEventCommandValidator();
 
             _mapper.Map(request, eventToUpdate, typeof(UpdateEventCommand), typeof(Event));
 
